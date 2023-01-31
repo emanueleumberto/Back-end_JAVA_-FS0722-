@@ -38,6 +38,8 @@ public class Esercizio4 {
 		
 		double pt = perimetroTriangolo(t1, t2, t3);
 		System.out.println("Il perimetro di un triangolo è: " + pt);
+		
+		System.out.println("FINE");
 	}
 	
 	public static double perimetroRettangolo(double l1, double l2) {
