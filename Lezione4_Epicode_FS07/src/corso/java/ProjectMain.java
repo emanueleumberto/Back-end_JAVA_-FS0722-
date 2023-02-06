@@ -42,6 +42,15 @@ public class ProjectMain {
 		for (int i = 0; i < oggetti.length; i++) {
 			System.out.println(oggetti[i].aggiorna());
 		}
+		
+		
+		
+		int[] arr = new int[3];
+		arr[0] = 25;
+		arr[1] = 10;
+		arr[2] = 9;
+		int[] arr2 = new int[] {25, 10, 9};
+		
 
 	}
 
