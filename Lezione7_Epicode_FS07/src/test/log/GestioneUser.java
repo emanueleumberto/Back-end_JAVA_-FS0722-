@@ -28,8 +28,8 @@ public class GestioneUser {
 	}
 
 	public void printList() {
-		for (User user : listaUtenti) {
-			log.info(user.toString());
+		for (User pippo : listaUtenti) {
+			log.info(pippo.toString());
 		}
 		
 		for (int i = 0; i < listaUtenti.size(); i++) {
