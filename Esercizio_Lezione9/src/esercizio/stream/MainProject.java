@@ -56,6 +56,8 @@ public class MainProject {
 		
 		List<Product> filterProductTier = getProductTier(listaOrdini);
 		filterProductTier.forEach(ele -> System.out.println(ele));
+		
+		TestFlatMap();
 	}
 	
 	public static List<Product> getListBooksOver100(List<Product> lista) {
@@ -110,5 +112,28 @@ public class MainProject {
 			.distinct()
 			.collect(Collectors.toList());
 	}
+	
+	public static void TestFlatMap() {
+		// FlatMap
+		List<Integer> l1 = Arrays.asList(5,3,9);
+		List<Integer> l2 = Arrays.asList(4,1,7);
+		List<Integer> l3 = Arrays.asList(5,4,3);
+		
+		List<List<Integer>> lista = Arrays.asList(l1, l2, l3);
+		
+		System.out.println(lista); // -> [[5,3,9], [4,1,7], [5,4,3]] -> [5,3,9,4,1,7,5,4,3]
+		
+		List<Integer> listaUnita =  lista.stream()
+										.flatMap(l -> l.stream())
+										.distinct()
+										.collect(Collectors.toList());
+	
+		System.out.println(listaUnita);
+	}
 
 }
+
+
+
+
+
