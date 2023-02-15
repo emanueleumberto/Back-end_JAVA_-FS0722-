@@ -66,6 +66,4 @@ public class Utente implements Serializable {
 		return "Utente [id=" + id + ", cognome=" + cognome + ", email=" + email + ", nome=" + nome + "]";
 	}
 	
-	
-
 }
