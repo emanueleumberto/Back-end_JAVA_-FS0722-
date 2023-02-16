@@ -4,10 +4,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-/**
- * The persistent class for the utente database table.
- * 
- */
 @Entity
 @NamedQuery(name="Utente.findAll", query="SELECT u FROM Utente u")
 public class Utente implements Serializable {
@@ -28,7 +24,7 @@ public class Utente implements Serializable {
 	private String nomeUtente;
 
 	@Enumerated(EnumType.STRING)
-	private String permessi;
+	private Permessi permessi;
 
 	public Utente() {
 	}
@@ -65,12 +61,20 @@ public class Utente implements Serializable {
 		this.nomeUtente = nomeUtente;
 	}
 
-	public String getPermessi() {
-		return this.permessi;
+	public Permessi getPermessi() {
+		return permessi;
 	}
 
-	public void setPermessi(String permessi) {
+	public void setPermessi(Permessi permessi) {
 		this.permessi = permessi;
 	}
+
+	@Override
+	public String toString() {
+		return "Utente [idUtente=" + idUtente + ", cittaUtente=" + cittaUtente + ", cognomeUtente=" + cognomeUtente
+				+ ", nomeUtente=" + nomeUtente + ", permessi=" + permessi + "]";
+	}
+
+	
 
 }
