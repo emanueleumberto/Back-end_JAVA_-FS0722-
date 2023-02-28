@@ -17,7 +17,7 @@ public class Box {
 	
 	private int x;
 	private int y;
-	@Value("${spring.application.name}")
+	
 	private String name;
 	
 	public int getArea() {

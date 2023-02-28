@@ -9,11 +9,13 @@ import com.GodfathersPizza.model.BrandMug;
 import com.GodfathersPizza.model.BrandShirt;
 import com.GodfathersPizza.model.Lemonade;
 import com.GodfathersPizza.model.Menu;
+import com.GodfathersPizza.model.Ordine;
 import com.GodfathersPizza.model.Pizza;
 import com.GodfathersPizza.model.PizzaFamilySize;
 import com.GodfathersPizza.model.PizzaHawaiian;
 import com.GodfathersPizza.model.PizzaMargherita;
 import com.GodfathersPizza.model.PizzaSalami;
+import com.GodfathersPizza.model.Tavolo;
 import com.GodfathersPizza.model.ToppingCheese;
 import com.GodfathersPizza.model.ToppingHam;
 import com.GodfathersPizza.model.ToppingOnions;
@@ -26,7 +28,6 @@ public class MenuConfiguration {
 	@Bean
 	public Menu menu() {
 		Menu menu = new Menu();
-		
 		
 		//Creare un Bean di tipo PizzaMargherita
 		//List<Pizza> listaPizze = menu.getMenuPizza();
@@ -128,6 +129,16 @@ public class MenuConfiguration {
 	@Bean
 	public BrandMug brandMug() {
 		return new BrandMug();
+	}
+	
+	@Bean
+	public Tavolo tavolo(int numeroTavolo, int numeroMassimoCoperti, boolean stato) {
+		return new Tavolo(numeroTavolo, numeroMassimoCoperti, stato);
+	}
+	
+	@Bean
+	public Ordine ordine() {
+		return new Ordine();
 	}
 	
 }

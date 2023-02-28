@@ -1,8 +1,8 @@
 package com.example.SpringBoot_Lezione2;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.example.SpringBoot_Lezione2.classes.Box;
@@ -13,7 +13,7 @@ public class SpringBootLezione2Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootLezione2Application.class, args);
-	
+		
 		getAppBeanBox();
 	}
 	
