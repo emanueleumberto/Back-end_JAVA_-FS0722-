@@ -19,5 +19,7 @@ public class Pizza extends Prodotto {
 		this.calorie = calorie;
 	}
 
-
+	public String getMenuPizza() {
+		return this.getNome() +" - Calorie: " + this.getCalorie() + " Prezzo: " + this.getPrezzo();
+	}
 }

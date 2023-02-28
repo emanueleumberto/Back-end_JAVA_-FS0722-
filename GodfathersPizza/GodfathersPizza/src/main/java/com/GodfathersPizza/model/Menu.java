@@ -8,6 +8,9 @@ import lombok.Getter;
 @Getter
 public class Menu {
 	
-	private List<Pizza> menuPizzas = new ArrayList<Pizza>();
+	private List<Pizza> menuPizza = new ArrayList<Pizza>();
+	private List<Bevanda> menuDrink = new ArrayList<Bevanda>();
+	private List<PizzaTopping> menuTopping = new ArrayList<PizzaTopping>();
+	private List<ArticoloBrand> menuBrand = new ArrayList<ArticoloBrand>();
 
 }

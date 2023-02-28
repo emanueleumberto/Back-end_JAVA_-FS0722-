@@ -2,16 +2,16 @@ package com.GodfathersPizza.model;
 
 public class PizzaFamilySize extends Pizza {
 	
-	private Pizza pizza;
-	private double CoeffCalorie;
-	private double CoeffPrezzo;
+	Pizza pizza;
+	double calorie;
+	double prezzo;
 	
 	
 	public PizzaFamilySize(Pizza pizza) {
 		super();
 		this.pizza = pizza;
-		this.CoeffCalorie = 1.95;
-		this.CoeffPrezzo = 4.15;
+		this.calorie = 1.95;
+		this.prezzo = 4.15;
 	}
 	
 	@Override
@@ -21,13 +21,13 @@ public class PizzaFamilySize extends Pizza {
 
 	@Override
 	public double getCalorie() {
-		return this.pizza.getCalorie() * this.CoeffCalorie;
+		return this.pizza.getCalorie() * this.calorie;
 	}
 
 
 	@Override
 	public double getPrezzo() {
-		return this.pizza.getPrezzo() + this.CoeffPrezzo;
+		return this.pizza.getPrezzo() + this.prezzo;
 	}
 
 	public Pizza getPizza() {
@@ -38,8 +38,9 @@ public class PizzaFamilySize extends Pizza {
 		this.pizza = pizza;
 	}
 	
-	public String getPizzaFamilySize() {
-		return "Family Size for Pizza ("+ this.pizza.getNome() +") - Calorie: " + this.getCalorie() + " Perzzo: " + this.getPrezzo();
+	@Override
+	public String getMenuPizza() {
+		return "Family Size for Pizza - Calorie: " + this.calorie + " Prezzo: " + this.prezzo;
 	}
 	
 }
