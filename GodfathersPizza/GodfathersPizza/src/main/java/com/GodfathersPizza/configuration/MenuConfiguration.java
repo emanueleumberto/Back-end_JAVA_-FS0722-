@@ -132,8 +132,12 @@ public class MenuConfiguration {
 	}
 	
 	@Bean
-	public Tavolo tavolo(int numeroTavolo, int numeroMassimoCoperti, boolean stato) {
-		return new Tavolo(numeroTavolo, numeroMassimoCoperti, stato);
+	public Tavolo tavolo() {
+		Tavolo t = new Tavolo();
+		t.setNumero(1);
+		t.setNumeroMassimoCoperti(4);
+		t.setStato(false);
+		return t;
 	}
 	
 	@Bean

@@ -23,7 +23,7 @@ public class Ordine {
 	private LocalDateTime oraAcquisizione = LocalDateTime.now();
 	
 	@Value("${GodfathersPizza.costoCoperto}")
-	private double costoCoperto;
+	private String costoCoperto;
 	
 	public Prodotto addProdotto(Prodotto p) {
 		ordinato.put(ordinato.size()+1, p);
@@ -39,7 +39,7 @@ public class Ordine {
 	}
 	
 	public double calcolaTotaleOrdine() {
-		return costoCoperto;
+		return Double.parseDouble(costoCoperto);
 	}
 	
 }

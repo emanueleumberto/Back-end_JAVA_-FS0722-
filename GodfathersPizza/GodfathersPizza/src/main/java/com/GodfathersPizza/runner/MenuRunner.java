@@ -19,11 +19,13 @@ public class MenuRunner implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		gestioneMenu();
 		
-		Tavolo t1 = new Tavolo(1, 4, false);
-		Tavolo t2 = new Tavolo(2, 6, false);
-		Tavolo t3 = new Tavolo(3, 2, false);
+		//Tavolo t1 = new Tavolo(1, 4, false);
+		//Tavolo t2 = new Tavolo(2, 6, false);
+		//Tavolo t3 = new Tavolo(3, 2, false);
 		
-		Ordine o1 = creaOrdine(t1, 3);
+		Tavolo t = creaTavolo();
+		
+		Ordine o1 = creaOrdine(t, 3);
 		
 		
 	}
@@ -57,14 +59,26 @@ public class MenuRunner implements CommandLineRunner {
 
 	// Gestione Ordine
 	
-	public Ordine creaOrdine(Tavolo tavolo, int numCoperti) {
-		appCtx = new AnnotationConfigApplicationContext(MenuConfiguration.class);
-		Ordine o = (Ordine) appCtx.getBean("ordine");
-		o.setTavolo(tavolo);
-		o.setNumeroCoperti(numCoperti);
+	
+	public Tavolo creaTavolo() {
+		appCtx = new AnnotationConfigApplicationContext(MenuConfiguration.class); 
+		Tavolo t = (Tavolo) appCtx.getBean("tavolo" ); 
 		appCtx.close();
-		return o;
+		return t;
 	}
+	
+	public Ordine creaOrdine(Tavolo tavolo, int numCoperti) { 
+		  appCtx = new AnnotationConfigApplicationContext(MenuConfiguration.class); 
+		  
+		  Ordine o = (Ordine) appCtx.getBean("ordine"); 
+		  o.setTavolo(tavolo);
+		  o.setNumeroCoperti(numCoperti); 
+		  
+		  appCtx.close(); 
+		  
+		  return o; 
+	}
+	 
 
 	public void stampaOrdine(Ordine o) {
 		// Stampare
