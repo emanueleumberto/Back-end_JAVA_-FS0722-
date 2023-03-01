@@ -23,7 +23,7 @@ public class MenuRunner implements CommandLineRunner {
 		//Tavolo t2 = new Tavolo(2, 6, false);
 		//Tavolo t3 = new Tavolo(3, 2, false);
 		
-		Tavolo t = creaTavolo();
+		Tavolo t = creaTavolo(1, 4);
 		
 		Ordine o1 = creaOrdine(t, 3);
 		
@@ -60,9 +60,9 @@ public class MenuRunner implements CommandLineRunner {
 	// Gestione Ordine
 	
 	
-	public Tavolo creaTavolo() {
+	public Tavolo creaTavolo(int numeroTavolo, int numeroMassimoCoperti) {
 		appCtx = new AnnotationConfigApplicationContext(MenuConfiguration.class); 
-		Tavolo t = (Tavolo) appCtx.getBean("tavolo" ); 
+		Tavolo t = (Tavolo) appCtx.getBean("tavolo", numeroTavolo, numeroMassimoCoperti); 
 		appCtx.close();
 		return t;
 	}

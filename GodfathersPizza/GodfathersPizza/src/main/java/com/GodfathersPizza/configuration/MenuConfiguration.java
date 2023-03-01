@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import com.GodfathersPizza.model.BrandMug;
 import com.GodfathersPizza.model.BrandShirt;
@@ -132,10 +133,11 @@ public class MenuConfiguration {
 	}
 	
 	@Bean
-	public Tavolo tavolo() {
+	@Scope("prototype")
+	public Tavolo tavolo(int numeroTavolo, int numeroMassimoCoperti) {
 		Tavolo t = new Tavolo();
-		t.setNumero(1);
-		t.setNumeroMassimoCoperti(4);
+		t.setNumero(numeroTavolo);
+		t.setNumeroMassimoCoperti(numeroMassimoCoperti);
 		t.setStato(false);
 		return t;
 	}
