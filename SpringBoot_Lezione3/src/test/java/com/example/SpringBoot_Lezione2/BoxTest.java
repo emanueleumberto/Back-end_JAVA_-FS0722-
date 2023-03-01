@@ -23,7 +23,7 @@ public class BoxTest {
 	@Before
 	public void beforeTest() {
 		System.out.println("@Before");
-		b = new Box(20, 10, null);
+		b = new Box(20, 10, "BoxTest");
 	}
 	
 	@Test

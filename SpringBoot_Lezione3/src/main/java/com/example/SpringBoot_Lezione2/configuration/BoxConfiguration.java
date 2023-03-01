@@ -32,4 +32,12 @@ public class BoxConfiguration {
 		return b;
 	}
 
+	@Bean
+	public Box boxBuilder() {
+		return Box.builder()
+					.name("Antonio Bianchi")
+					.x(50)
+					.y(10)
+					.build();
+	}
 }
