@@ -1,5 +1,7 @@
 package com.example.SpringBoot_Lezione4.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,7 @@ public class UserService {
 		u3.setAge(25);
 		u3.setEmail("m.rossi@example.com");*/
 		
-		User u = new User("Mario", "Rossi", "Roma", 25, "m.rossi@example.com");
+		User u = new User("Giuseppe", "Verdi", "Napoli", 49, "g.verdi@example.com");
 		
 		return u;
 	
@@ -29,6 +31,22 @@ public class UserService {
 	
 	public void insertUser() {
 		jdbc.createUser(createTestUser());
+	}
+	
+	public User getUserByID(Long id) {
+		return jdbc.getUserByID(id);
+	}
+	
+	public void updateUser(User user) {
+		jdbc.updateUser(user);
+	}
+	
+	public void removeUser(Long id) {
+		jdbc.removeUser(id);
+	}
+	
+	public List<User> getAllUser() {
+		return jdbc.getAllUsers();
 	}
 	
 

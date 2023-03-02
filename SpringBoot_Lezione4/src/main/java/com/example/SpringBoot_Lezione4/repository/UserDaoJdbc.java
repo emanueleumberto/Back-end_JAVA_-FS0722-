@@ -26,7 +26,7 @@ public class UserDaoJdbc implements UserDaoRepository {
 				user.getAge(),
 				user.getEmail()
 				);
-
+		System.out.println(user.getName() + " " + user.getLastname() + " Creato!!");
 	}
 
 	@Override
@@ -44,24 +44,28 @@ public class UserDaoJdbc implements UserDaoRepository {
 				user.getEmail(),
 				user.getId()
 				);
+		System.out.println(user.getName() + " " + user.getLastname() + " Modificato!!");
 	}
 
 	@Override
 	public void removeUser(Long id) {
 		String sql = "DELETE FROM users WHERE id = ?";
 		jdbcTemplate.update(sql,id);
+		System.out.println("Utente eliminato!!!");
 	}
 
 	@Override
 	public User getUserByID(Long id) {
 		String sql = "SELECT * FROM users WHERE id = ?";
-		return null;
+		User user = jdbcTemplate.queryForObject(sql, new UserRowMapper(), id);
+		return user;
 	}
 
 	@Override
 	public List<User> getAllUsers() {
 		String sql = "SELECT * FROM users";
-		return null;
+		List<User> userlist = jdbcTemplate.query(sql, new UserRowMapper());
+		return userlist;
 	}
 
 }
