@@ -1,5 +1,7 @@
 package com.SpringBoot_SpringSecurity.auth.roles;
 
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -13,18 +15,20 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name="roles")
+@Table(name = "be_service_roles")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @ToString
 public class Role {
-	
 	@Id
+	//@SequenceGenerator(name = "be_service_roles_id_seq", sequenceName = "be_service_roles_id_seq", allocationSize = 1)
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "be_service_roles_id_seq")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Enumerated(EnumType.STRING)
+	@Column(length = 20)
 	private ERole roleName;
 
 }
